@@ -1,64 +1,76 @@
-# Семестровая работа (2 семестр)
-## Международная торговая площадка (товарно-сырьевая биржа)
+# Semester Project (2nd semester)
+## International Trading Platform (Commodity Exchange)
 
-### Каждый выбирает себе страну
+### Choosing Countries
+- Each person selects a country.
 
-### Архитектура 
-- центральная биржа
-- национальные биржи
+### Architecture
+- Central exchange
+- National exchanges
 
-1. Список товаров.
-    - Каждая страна предлагает свой список товаров, которые она производит
-    - Структура: код (UZB0001, EGY00002, ..), наименование, единица измерения (кг, л, м3, м2, м, ...)
-2. Справочник единиц измерения
-3. Справочник валют 
-4. Справочник государств
-4. Документы
-    - Предложение организации (завода): 
-      * организация
-      * код страны
-      * товар
-      * объем (общий, сколько есть)
-      * валюта
-      * стоимость за единицу (партию)
-      * минимальный объем партии
-      * дата поступления предложения
-    
-    - Контракт на закупку товара
-      * организация - продавец (производитель)
-      * товар
-      * объем
-      * дата контракта
-      * организация покупатель
-      * стоимость контракта
-      * валюта контракта
-      
-    - Оплата контракта
-      * контракт
-      * дата оплаты
-      * валюта
-      * сумма
-    
-    - Поставка по контракту
-      * контракт
-      * дата поставки
+## Tasks
+1. Complete the RESTful ru.itis.Application.service for currencies (Currency).
+2. Create a separate project - Semester 2.
+3. Implement authentication.
+4. Create a page that displays all currencies and make a request for currencies through a REST ru.itis.Application.service.
+5. Create a page for adding a new product:
+   - Pass the data of the new product through a form.
+   - Generate an innerUID.
+   - Save the data in the database.
+   - Send the data of the new product to the central exchange.
+6. Create a page to retrieve new products from the central exchange.
 
-Протоколы:
+## Domain Model
 
-- Организация продавец формирует предложение -> национальная площадка -> центральная площадка
+### Country
+- code
+- name
 
+### Product
+- code
+- name
+- unit of measurement
 
+### Unit of Measurement
+- code
+- name
 
-### Задания
-1. Доделать REST Full service по валютам (Currency)
-2. Создать отдельный проект - семестровая 2
-3. Сделать авторизацию
-4. сделать страницу, которая показывает все валюты, запрос валют 
-  через REST сервис
+### Currency
+- code
+- name
 
-5. Создать страницу для добавления нового продукта
-   - Передаете через форму данные нового продукта
-   - генерируете innerUID
-   - сохраняете себе в базу данных
-   - отправляете на центральную площадку данные нового продукта
-6. Создать страницу для получения новых товаров из центральной площадки
+### State
+- code
+- name
+
+### Organization Proposal
+- organization
+- country code
+- product
+- volume
+- currency
+- unit cost
+- minimum batch volume
+- proposal submission date
+
+### Product Purchase Contract
+- seller organization (manufacturer)
+- product
+- volume
+- contract date
+- buyer organization
+- contract cost
+- contract currency
+
+### Contract Payment
+- contract
+- payment date
+- currency
+- amount
+
+### Contract Delivery
+- contract
+- delivery date
+
+### Protocols
+- Seller organization creates a proposal -> National exchange -> Central exchange

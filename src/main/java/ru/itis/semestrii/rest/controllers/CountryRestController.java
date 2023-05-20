@@ -1,9 +1,9 @@
 package ru.itis.semestrii.rest.controllers;
 
-import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.itis.semestrii.rest.dto.CountryDto;
+import ru.itis.semestrii.rest.dto.CurrencyDto;
 import ru.itis.semestrii.rest.services.CountryService;
 
 import java.util.List;
@@ -20,6 +20,7 @@ public class CountryRestController {
     public List<CountryDto> getAllCountry() {
         return service.getAll();
     }
+
     @PostMapping("/create")
     public CountryDto createCountry(@RequestBody CountryDto countryDto){
         return service.save(countryDto);

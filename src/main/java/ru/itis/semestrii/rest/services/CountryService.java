@@ -31,7 +31,7 @@ public class CountryService {
     public CountryDto save(CountryDto countryDto){
         Country country = new Country();
         country.setName(countryDto.getName());
-        country.setCurrency(currencyRepository.findById(countryDto.getCurrency()).get());
+        country.setCurrency(currencyRepository.findById(countryDto.getCurrencyId()).get());
         country.setAlpha3(countryDto.getAlpha3());
 
         return new CountryDto(repository.save(country));

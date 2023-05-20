@@ -14,7 +14,9 @@ public class CountryDto extends AbstractDto {
     @JsonProperty("alpha3")
     private String alpha3;
     @JsonProperty("currency")
-    private Long currency;
+    private Currency currency;
+    @JsonProperty("currency_id")
+    private Long currencyId;
     @JsonProperty("name")
     private String name;
 
@@ -24,6 +26,6 @@ public class CountryDto extends AbstractDto {
         this.name = country.getName();
         this.id = country.getId();
         this.alpha3 = country.getAlpha3();
-        this.currency = country.getCurrency().getId();
+        this.currency = country.getCurrency();
     }
 }

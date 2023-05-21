@@ -7,7 +7,6 @@ import ru.itis.semestrii.rest.model.Country;
 import ru.itis.semestrii.rest.repositoryes.CountryRepository;
 import ru.itis.semestrii.rest.repositoryes.CurrencyRepository;
 
-import java.util.Currency;
 import java.util.List;
 
 @Service
@@ -28,10 +27,18 @@ public class CountryService {
         return result;
     }
 
-    public CountryDto save(CountryDto countryDto){
+    public CountryDto edit(Long id, CountryDto countryDto){
+        Country country = repository.findById(id).get();
+        country.setName(countryDto.getName());
+        country.setAlpha3(countryDto.getAlpha3());
+
+        return new CountryDto(repository.save(country));
+    }
+
+    public CountryDto save(CountryDto countryDto, Long currencyId){
         Country country = new Country();
         country.setName(countryDto.getName());
-        country.setCurrency(currencyRepository.findById(countryDto.getCurrencyId()).get());
+        country.setCurrency(currencyRepository.findById(currencyId).get());
         country.setAlpha3(countryDto.getAlpha3());
 
         return new CountryDto(repository.save(country));

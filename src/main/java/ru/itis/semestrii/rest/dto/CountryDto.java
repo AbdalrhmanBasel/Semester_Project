@@ -1,7 +1,6 @@
 package ru.itis.semestrii.rest.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -13,12 +12,10 @@ public class CountryDto extends AbstractDto {
     private Long id;
     @JsonProperty("alpha3")
     private String alpha3;
-    @JsonProperty("currency")
-    private Currency currency;
-    @JsonProperty("currency_id")
-    private Long currencyId;
     @JsonProperty("name")
     private String name;
+
+    private Currency currency;
 
     public CountryDto() {}
 
@@ -29,3 +26,4 @@ public class CountryDto extends AbstractDto {
         this.currency = country.getCurrency();
     }
 }
+

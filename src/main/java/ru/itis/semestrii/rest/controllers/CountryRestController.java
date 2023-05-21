@@ -21,8 +21,14 @@ public class CountryRestController {
         return service.getAll();
     }
 
-    @PostMapping("/create")
-    public CountryDto createCountry(@RequestBody CountryDto countryDto){
-        return service.save(countryDto);
+    @PostMapping("/{currency_id}/create")
+    public CountryDto createCountry(@PathVariable("currency_id") Long currencyId,  @RequestBody CountryDto countryDto){
+        return service.save(countryDto, currencyId);
     }
+
+    @PutMapping("/{country_id}/edit")
+    public CountryDto editCountry(@PathVariable("country_id") Long id, @RequestBody CountryDto countryDto){
+        return service.edit(id, countryDto);
+    }
+
 }

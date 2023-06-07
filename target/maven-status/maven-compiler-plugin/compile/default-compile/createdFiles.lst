@@ -1,0 +1,17 @@
+ru\itis\semestrii\rest\services\CountryService.class
+ru\itis\semestrii\rest\dto\CountryDto.class
+ru\itis\semestrii\rest\repositoryes\CountryRepository.class
+ru\itis\semestrii\rest\repositoryes\CurrencyRepository.class
+ru\itis\semestrii\rest\client\CurrencyClient.class
+ru\itis\semestrii\rest\SpringBootRestAPI.class
+ru\itis\semestrii\rest\client\UIDGenerator.class
+ru\itis\semestrii\rest\controllers\HomeController.class
+ru\itis\semestrii\rest\dto\AbstractDto.class
+ru\itis\semestrii\rest\model\Country.class
+ru\itis\semestrii\rest\dto\CurrencyDto.class
+ru\itis\semestrii\rest\model\Currency.class
+ru\itis\semestrii\rest\client\CurrencyClient$1.class
+ru\itis\semestrii\rest\controllers\CurrencyRestController.class
+ru\itis\semestrii\rest\controllers\CountryRestController.class
+ru\itis\semestrii\rest\services\CurrencyService.class
+ru\itis\semestrii\rest\model\AbstractDict.class

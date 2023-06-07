@@ -17,7 +17,7 @@ public class CountryService {
     @Autowired
     private CurrencyRepository currencyRepository;
 
-    public List<CountryDto> getAll() {
+    public List<CountryDto> getAllCountries() {
         List<Country> lst = repository.getAll();
 
         List<CountryDto> result = lst
@@ -42,5 +42,11 @@ public class CountryService {
         country.setAlpha3(countryDto.getAlpha3());
 
         return new CountryDto(repository.save(country));
+    }
+
+    public List<CountryDto> findAll(Integer page){
+        return repository.findAll(page).stream()
+                .map(country -> new CountryDto(country))
+                .toList();
     }
 }

@@ -18,7 +18,7 @@ public class CountryRestController {
 
     @GetMapping("/all")
     public List<CountryDto> getAllCountry() {
-        return service.getAll();
+        return service.getAllCountries();
     }
 
     @PostMapping("/{currency_id}/create")

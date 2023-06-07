@@ -8,5 +8,4 @@ import lombok.Setter;
 @Getter@Setter
 @MappedSuperclass
 public class AbstractDict {
-
 }

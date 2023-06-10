@@ -20,6 +20,8 @@ public class ProductDto{
   private Currency currency;
   @JsonProperty("country")
   private Country country;
+  @JsonProperty("name")
+  private String name;
 
   public ProductDto() {}
 
@@ -27,6 +29,7 @@ public class ProductDto{
     this.price = product.getPrice();
     this.currency = product.getCurrency();
     this.country = product.getCountry();
+    this.name = product.getName();
   }
 }
 

@@ -15,7 +15,7 @@
           <tr>
               <td>${country.alpha3}</td>
               <td>${country.name}</td>
-              <td><a href="localhost:8080/product/new"></a> </td>
+              <td><a href="localhost:8100/product/new"></a> </td>
           </tr>
     </#list>
   </table>

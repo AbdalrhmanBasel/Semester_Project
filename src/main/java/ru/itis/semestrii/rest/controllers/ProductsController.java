@@ -45,8 +45,11 @@ public class ProductsController {
   }
 
   @PostMapping("/create")
-  public String createProduct(ProductDto productDto){
-    System.out.println(productDto.getCurrency());
-    return "ok";
+  public String createProduct(ProductDto productDto, Model model){
+
+    productService.save(productDto);
+    List<ProductDto> products = productService.findAll();
+    model.addAttribute("products", products);
+    return "products/all";
   }
 }

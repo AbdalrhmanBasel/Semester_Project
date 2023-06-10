@@ -11,6 +11,7 @@ public class Product {
   @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "SequenceProduct")
   private Long id;
   private String price;
+  private String name;
 
   @ManyToOne
   private Country country;
